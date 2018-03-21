@@ -4,8 +4,9 @@ include('../admin/class/user.class.php');
 if(isset($_POST['register'])){
 $name = $_POST['name'];
 $email = $_POST['email'];
-$password = $_POST['password'];
-$ckpassword = $_POST['ckpassword'];
+$password = md5($_POST['password']);
+$ckpassword = md5($_POST['ckpassword']);
+$role = $_POST['role_id'];
 
 $userObj = new User();
 

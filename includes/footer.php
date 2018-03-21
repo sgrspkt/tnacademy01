@@ -139,6 +139,7 @@
 						</div>
 						<div class="styled-input">
 							<input type="password" placeholder="Check Password" name="ckpassword" required="" class="ckpwd">
+							<input type="hidden" name="role_id" value="0">
 						</div>
 						<div class="styled-input msg">
 							

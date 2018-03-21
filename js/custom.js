@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	//var checkpassword = $('.ckpwd').keyup().val();
-	$('.ckpwd').keyup(function(e){
+	$('.ckpwd').keyup(function(){
 		var password = $('.pwd').val();
 		var checkpassword =$(this).val();
 		if(password == checkpassword){

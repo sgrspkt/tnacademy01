@@ -33,7 +33,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-           <li><a href="index2.html"><i class="fa fa-circle-o"></i>View User</a></li>
+           <li><a href="index.php?page=user&action=view"><i class="fa fa-circle-o"></i>View User</a></li>
           </ul>
         </li>
       </ul>

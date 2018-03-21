@@ -6,9 +6,11 @@ class User extends Connection{
 	private $email;
 	private $password;
 	private $ckpassword;
+	private $role_id;
+
 
 	public function __construct(){
-		//parent::__construct();
+		parent::__construct();
 	}
 
 	public function setUserId($id=''){
@@ -27,16 +29,34 @@ class User extends Connection{
 	public function setCkPassword($ckpw=''){
 		$this->ckpassword=$ckpw;
 	}
+	public function setRoleId($rd=''){
+		$this->role_id=$rd;
+	}
 
 //add user
 
 	public function addUser(){
-		die('die');
-		$this->sql = "INSERT INTO user(username,email,password,ckpassword) VALUES('$this->username','$this->email','$this->password','$this->ckpassword')";
+		//die();
+		$this->sql = "INSERT INTO user(username,email,password,ckpassword,role_user_id) VALUES('$this->username','$this->email','$this->password','$this->ckpassword',$this->role_id)";
 		//echo $this->sql;
 		$this->res = mysqli_query($this->con, $this->sql);
 		$this->aff = mysqli_affected_rows($this->con);
-		var_dump($this->aff);
+		//var_dump($this->aff);
 	}
+
+	public function viewUser(){
+		$this->sql = "SELECT * FROM user";
+		/*echo $this->sql; die();*/
+		$this->res = mysqli_query($this->con, $this->sql);
+		$numRows = $this->numRows = mysqli_num_rows($this->res);
+		$this->data=array();
+			if($this->numRows>0){
+				while($this->row=mysqli_fetch_assoc($this->res)){
+					array_push($this->data,$this->row);
+
+				}
+				return $this->data;
+	}
+}
 }
 ?>

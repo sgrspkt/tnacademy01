@@ -18,9 +18,10 @@
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-     <?php //include('includes/datastat.php');?>
-
+<?php 
+     include('../condition.php');
+ include($load); 
+     ?>
      <?php 
   include('class/connection.class.php');
   $objConnection = new Connection();
